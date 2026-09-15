@@ -1,0 +1,18 @@
+Project Summary: Continuing Our Lab's Work on Protein Folding
+
+We want to keep doing research on protein folding, which is what our lab has been doing for the
+last six years under our current NIH R01 grant. This pilot grant would basically let us keep the
+lab running smoothly while we wait to hear back on our R01 renewal, since our current funding runs
+out soon and this would cover the gap.
+
+We plan to use the same computational modeling techniques we've always used, just applied to a
+couple of new proteins. It should work fine since it's basically the same method.
+
+Budget:
+- New lab server (~$4,500)
+- PI summer salary support: $8,000
+- Travel to two conferences to present results: $3,200
+- Remaining funds for supplies
+
+We're confident this will go well since we've done similar work before, though we haven't decided
+exactly which proteins we'll look at yet or how we'll know if it worked.

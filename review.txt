@@ -1,0 +1,24 @@
+{
+  "reviews": [
+    {
+      "category": "Strengths/Weaknesses vs. Program Objectives",
+      "score": 1,
+      "comment": "The proposal does not demonstrate a new technique or approach, nor does it clearly differentiate from existing funded work. The project summary does not provide a clear plan to assess success."
+    },
+    {
+      "category": "Innovation and Advancement of Agency Needs",
+      "score": 1,
+      "comment": "The proposal does not propose a genuinely novel research pilot, but rather a continuation of existing work. The use of the same computational modeling techniques does not demonstrate innovation."
+    },
+    {
+      "category": "Quality of the Written Proposal",
+      "score": 2,
+      "comment": "The project summary is unclear and lacks a clear plan to assess success. The writing is not concise and does not thoroughly explain the proposed research. The proposal does not include a mechanism to assess success."
+    },
+    {
+      "category": "Investigator/Team Capability",
+      "score": 5,
+      "comment": "The investigator appears to be well-qualified, having conducted similar work in the past. However, the lack of clear qualifications relevant to the proposed technique is a concern."
+    }
+  ]
+}
