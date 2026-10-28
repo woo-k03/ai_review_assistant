@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposal Review Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Show review history" aria-expanded="false" aria-controls="history">History</button>
+  <span class="brand">Proposal Review Assistant</span>
+</header>
+
+<div class="layout">
+  <aside id="history" class="history" aria-label="Past reviews">
+    <button class="btn primary block" id="newBtn">New review</button>
+    <ul id="historyList" class="history-list"></ul>
+    <p id="historyEmpty" class="empty" hidden>No reviews yet. Upload a solicitation and a proposal to start.</p>
+  </aside>
+
+  <main id="main" class="main" tabindex="-1"></main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

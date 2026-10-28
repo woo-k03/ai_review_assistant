@@ -1,1 +1,3 @@
 __pycache__/
+reviews.db
+.secret_key
