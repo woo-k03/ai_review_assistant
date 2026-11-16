@@ -9,7 +9,10 @@ ollama_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/chat")
 model_name = os.environ.get("OLLAMA_MODEL", "llama3.1")
 DEMO_MODE = os.environ.get("DEMO_MODE") == "1"
 
-# Rubric categories the model must score
+# Max combined characters of solicitation + proposal
+MAX_INPUT_CHARS = int(os.environ.get("MAX_INPUT_CHARS", 48000))
+
+# Rubric categories
 rubric = [
     {
         "category": "Strengths/Weaknesses vs. Program Objectives",
@@ -103,7 +106,7 @@ def call_ollama(prompt: str) -> dict:
             },
             "required": ["reviews"],
         },
-        "options": {"temperature": 0.2, "num_ctx": 16384},
+        "options": {"temperature": 0, "seed": 42, "num_ctx": 16384},
     }
 
     try:
@@ -151,7 +154,16 @@ def to_frontend(review_data: dict) -> dict:
     }
 
 
-# Entry point used by app.py: review one proposal against one solicitation
+# Reject inputs too long for the model
+def check_length(solicitation: str, proposal: str) -> None:
+    total = len(solicitation) + len(proposal)
+    if total > MAX_INPUT_CHARS:
+        raise ValueError(
+            f"Combined text is too long ({total:,} characters; limit is {MAX_INPUT_CHARS:,}). "
+            "Shorten the solicitation or proposal.")
+
+
+# Entry point used by app.py
 def review_proposal(solicitation: str, proposal: str) -> dict:
     if DEMO_MODE:
         time.sleep(4)
