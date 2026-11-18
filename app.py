@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from flask import Flask, g, jsonify, render_template, request
 from pypdf import PdfReader
 
-from reviewer import review_proposal
+from reviewer import review_proposal, check_length
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.environ.get("DB_PATH", os.path.join(BASE_DIR, "reviews.db"))
@@ -141,6 +141,7 @@ def create_review():
     try:
         solicitation = extract_text(sol_file)
         proposal = extract_text(prop_file)
+        check_length(solicitation, proposal)
     except ValueError as exc:
         return jsonify(error=str(exc)), 400
 
